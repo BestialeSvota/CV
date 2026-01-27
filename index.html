@@ -229,6 +229,37 @@
   /* Petites colonnes : pas de nowrap sur mobile */
   th.compact, td.compact{ white-space: normal; }
 }
+    @media (max-width: 820px){
+  .wrap{ padding-left: 18px; padding-right: 18px; }
+  .table-wrap{ border: 0; padding: 0; }
+  thead{ display: none; }
+
+  table, tbody, tr, td{ display: block; width: 100%; }
+
+  tbody tr{ border-top: 1px solid var(--hair); padding: 16px 0; }
+
+  tbody td{ border: 0; padding: 6px 0; font-size: 14px; line-height: 1.55; }
+
+  tbody td::before{
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    content: "";
+  }
+
+  tbody td:nth-child(1)::before{ content: "Domaine"; }
+  tbody td:nth-child(2)::before{ content: "Compétence"; }
+  tbody td:nth-child(3)::before{ content: "Type"; }
+  tbody td:nth-child(4)::before{ content: "Niveau"; }
+  tbody td:nth-child(5)::before{ content: "Ce que ça te permet"; }
+  tbody td:nth-child(6)::before{ content: "Preuves / indicateurs"; }
+  tbody td:nth-child(7)::before{ content: "Risque / point à cadrer"; }
+
+  th.compact, td.compact{ white-space: normal; }
+}
   </style>
 </head>
 
@@ -615,4 +646,5 @@
   </script>
 </body>
 </html>
+
 
