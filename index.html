@@ -3,648 +3,939 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Landry M. — CV</title>
-  <meta name="description" content="Landry — CV Web. Tableau complet hard/soft, lisible, sans défilement." />
+  <title>Landry — CV public</title>
+  <meta name="description" content="Landry — CV public. Compétences, capacités, méthode et contact." />
 
   <style>
     :root{
       --bg: #0A0A0A;
-      --fg: #edebe7;
-      --muted: rgba(237,235,231,0.72);
-      --hair: rgba(237,235,231,0.10);
-      --row: rgba(237,235,231,0.06);
-
-      /* Largeur globale (table) : vise les traits rouges */
-      --wide: 1800px;
-
-      /* Largeur texte (titre/profil) : reste propre et lisible */
-      --narrow: 920px;
-
-      /* Marges latérales (sur grands écrans) */
-      --side: 80px;
+      --fg: #EDEBE7;
+      --muted: rgba(237,235,231,0.66);
+      --soft: rgba(237,235,231,0.44);
+      --line: rgba(184,168,139,0.22);
+      --line-soft: rgba(184,168,139,0.12);
+      --beige: #B8A88B;
+      --beige-soft: rgba(184,168,139,0.72);
+      --max: 1760px;
+      --text: 940px;
+      --side: 72px;
     }
 
     *{ box-sizing: border-box; }
-    html, body{ height: 100%; }
-
+    html{ scroll-behavior: smooth; }
     body{
       margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      letter-spacing: 0.2px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      letter-spacing: 0.15px;
       line-height: 1.65;
     }
 
     a{
       color: var(--fg);
       text-decoration: none;
-      border-bottom: 1px solid var(--hair);
+      border-bottom: 1px solid var(--line);
     }
-    a:hover{ opacity: 0.9; }
+    a:hover{ border-bottom-color: var(--beige); }
 
-    /* Zone principale (table large) */
-    .wrap{
-      max-width: var(--wide);
+    .page{
+      width: 100%;
+      max-width: var(--max);
       margin: 0 auto;
-      padding: 56px var(--side) 80px;
+      padding: 64px var(--side) 88px;
     }
 
-    /* Zone texte (narrow) */
-    .narrow{
-      max-width: var(--narrow);
+    .text-width{
+      max-width: var(--text);
       margin: 0 auto;
     }
 
-    /* Responsive: réduis les marges latérales quand l'écran est plus petit */
-    @media (max-width: 1200px){
-      :root{ --side: 32px; }
-    }
-    @media (max-width: 700px){
-      :root{ --side: 18px; }
-    }
-
-    header{ margin-bottom: 30px; }
-
-    .name{
-      font-size: 40px;
-      font-weight: 650;
-      letter-spacing: 0.4px;
-      margin: 0 0 8px;
-    }
-
-    .role{
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .small{
-      margin: 10px 0 0;
+    .topline{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line-soft);
       color: var(--muted);
       font-size: 13px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
     }
 
-    .line{
-      height: 1px;
-      background: var(--hair);
-      margin: 26px 0;
+    .mark{
+      color: var(--fg);
+      letter-spacing: 1.8px;
+      font-weight: 500;
+    }
+
+    .nav{
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a{
+      color: var(--muted);
+      border-bottom: none;
+    }
+
+    .nav a:hover{ color: var(--fg); }
+
+    header{
+      padding: 88px 0 74px;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .eyebrow{
+      margin: 0 0 18px;
+      color: var(--beige-soft);
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    h1{
+      margin: 0;
+      max-width: 980px;
+      font-size: clamp(42px, 6vw, 86px);
+      line-height: 0.98;
+      font-weight: 430;
+      letter-spacing: -2.6px;
+    }
+
+    .intro{
+      max-width: 760px;
+      margin: 34px 0 0;
+      color: var(--muted);
+      font-size: clamp(15px, 1.2vw, 18px);
+      line-height: 1.78;
+    }
+
+    .meta{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 58px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .meta div{
+      min-width: 0;
+    }
+
+    .meta span{
+      display: block;
+      color: var(--soft);
+      font-size: 11px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .meta strong{
+      display: block;
+      color: var(--fg);
+      font-size: 14px;
+      font-weight: 450;
+    }
+
+    section{
+      padding: 58px 0;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .section-head{
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 42px;
+      align-items: start;
+      margin-bottom: 34px;
     }
 
     h2{
-      margin: 0 0 10px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 1.6px;
+      margin: 0;
+      color: var(--beige-soft);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
+    }
+
+    .section-head p{
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .portrait-slot{
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 54px;
+      align-items: start;
+    }
+
+    .photo-placeholder{
+      display: none;
+      aspect-ratio: 4 / 5;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(237,235,231,0.04), rgba(184,168,139,0.02));
+      position: relative;
+    }
+
+    .photo-placeholder::after{
+      content: "Photo optionnelle";
+      position: absolute;
+      inset: auto 18px 18px;
+      color: var(--soft);
+      font-size: 12px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .profile-lines{
+      display: grid;
+      gap: 18px;
+      color: var(--fg);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .profile-lines p{
+      margin: 0;
+      max-width: 820px;
+    }
+
+    .profile-lines .muted{
       color: var(--muted);
     }
 
-    p{
-      margin: 0 0 12px;
-      font-size: 15px;
-      color: var(--fg);
+    .table-note{
+      color: var(--soft);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      margin: -12px 0 22px;
     }
 
-    /* ===== TABLEAU : entier, pas de scroll, mais plus large (respire) ===== */
-    .table-wrap{
-      border-top: 1px solid var(--hair);
-      border-bottom: 1px solid var(--hair);
-      padding: 14px 0;
-    }
-
-    table{
+    .skills-table{
       width: 100%;
       border-collapse: collapse;
-      table-layout: fixed; /* pas de scroll horizontal */
+      table-layout: fixed;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    /* Largeurs recalibrées pour respirer sur la largeur étendue */
-    col.domain  { width: 10%; }
-    col.skill   { width: 18%; }
-    col.type    { width: 6%;  }
-    col.level   { width: 6%;  }
-    col.use     { width: 18%; }
-    col.proof   { width: 21%; }
-    col.risk    { width: 21%; }
+    .skills-table col.domain{ width: 10%; }
+    .skills-table col.skill{ width: 20%; }
+    .skills-table col.type{ width: 7%; }
+    .skills-table col.level{ width: 7%; }
+    .skills-table col.use{ width: 18%; }
+    .skills-table col.proof{ width: 19%; }
+    .skills-table col.risk{ width: 19%; }
 
-    thead th{
+    .skills-table th{
       text-align: left;
-      font-size: 12px;
-      letter-spacing: 1.1px;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 600;
-
-      padding: 14px 14px; /* + air */
-      border-bottom: 1px solid var(--hair);
-
-      white-space: normal;
-      overflow-wrap: anywhere;
-      word-break: break-word;
+      color: var(--beige-soft);
+      font-size: 11px;
       line-height: 1.35;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 16px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: bottom;
     }
 
-    tbody td{
-      padding: 16px 14px;  /* + air */
-      border-bottom: 1px solid var(--row);
+    .skills-table td{
+      color: var(--fg);
+      font-size: 13.5px;
+      line-height: 1.58;
+      padding: 16px 14px;
+      border-bottom: 1px solid var(--line-soft);
       vertical-align: top;
-
-      font-size: 14px;
-      line-height: 1.6;
-
-      white-space: normal;
       overflow-wrap: anywhere;
       word-break: break-word;
     }
 
-    tbody tr:last-child td{ border-bottom: none; }
+    .skills-table tr:last-child td{ border-bottom: none; }
+    .skills-table .muted{ color: var(--muted); }
+    .skills-table .compact{ white-space: nowrap; }
 
-    td.muted{ color: var(--muted); }
+    .method-grid{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
 
-    /* Colonnes courtes (Type/Niveau) : restent compactes */
-    th.compact, td.compact{
-      white-space: nowrap;
+    .method-item{
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .method-item span{
+      display: block;
+      color: var(--beige-soft);
+      font-size: 11px;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .method-item p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .contact{
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .contact p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
     }
 
     footer{
-      margin-top: 34px;
-      color: var(--muted);
-      font-size: 12px;
+      padding-top: 24px;
       display: flex;
       justify-content: space-between;
-      gap: 12px;
+      gap: 24px;
       flex-wrap: wrap;
-      border-top: 1px solid var(--hair);
-      padding-top: 18px;
+      color: var(--soft);
+      font-size: 12px;
+      letter-spacing: 0.5px;
     }
-    /* ===== Mobile fix : tableau lisible sans scroll ===== */
-@media (max-width: 820px){
 
-  /* On garde la mise en page générale propre */
-  .wrap{ padding-left: 18px; padding-right: 18px; }
-  .table-wrap{ border: 0; padding: 0; }
+    @media (max-width: 1100px){
+      :root{ --side: 34px; }
+      .meta{ grid-template-columns: repeat(2, 1fr); }
+      .method-grid{ grid-template-columns: repeat(2, 1fr); }
+      .portrait-slot{ grid-template-columns: 1fr; }
+    }
 
-  /* On cache l'en-tête du tableau */
-  thead{ display: none; }
-
-  /* Chaque ligne devient un bloc vertical */
-  table, tbody, tr, td{
-    display: block;
-    width: 100%;
-  }
-
-  tbody tr{
-    border-top: 1px solid var(--hair);
-    padding: 12px 0;
-  }
-
-  tbody td{
-    border: 0;
-    padding: 6px 0;
-    font-size: 14px;
-    line-height: 1.55;
-  }
-
-  /* Afficher un label avant chaque cellule */
-  tbody td::before{
-    display: block;
-    color: var(--muted);
-    font-size: 12px;
-    letter-spacing: 1.1px;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-    content: "";
-  }
-
-  /* Labels par colonne (7 colonnes) */
-  tbody td:nth-child(1)::before{ content: "Domaine"; }
-  tbody td:nth-child(2)::before{ content: "Compétence"; }
-  tbody td:nth-child(3)::before{ content: "Type"; }
-  tbody td:nth-child(4)::before{ content: "Niveau"; }
-  tbody td:nth-child(5)::before{ content: "Ce que ça te permet"; }
-  tbody td:nth-child(6)::before{ content: "Preuves / indicateurs"; }
-  tbody td:nth-child(7)::before{ content: "Risque / point à cadrer"; }
-
-  /* Petites colonnes : pas de nowrap sur mobile */
-  th.compact, td.compact{ white-space: normal; }
-}
     @media (max-width: 820px){
-  .wrap{ padding-left: 18px; padding-right: 18px; }
-  .table-wrap{ border: 0; padding: 0; }
-  thead{ display: none; }
+      :root{ --side: 20px; }
 
-  table, tbody, tr, td{ display: block; width: 100%; }
+      .topline{
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
 
-  tbody tr{ border-top: 1px solid var(--hair); padding: 16px 0; }
+      .nav{
+        justify-content: flex-start;
+        gap: 14px;
+      }
 
-  tbody td{ border: 0; padding: 6px 0; font-size: 14px; line-height: 1.55; }
+      header{
+        padding: 58px 0 54px;
+      }
 
-  tbody td::before{
-    display: block;
-    color: var(--muted);
-    font-size: 11px;
-    letter-spacing: 1.1px;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-    content: "";
-  }
+      h1{
+        letter-spacing: -1.4px;
+      }
 
-  tbody td:nth-child(1)::before{ content: "Domaine"; }
-  tbody td:nth-child(2)::before{ content: "Compétence"; }
-  tbody td:nth-child(3)::before{ content: "Type"; }
-  tbody td:nth-child(4)::before{ content: "Niveau"; }
-  tbody td:nth-child(5)::before{ content: "Ce que ça te permet"; }
-  tbody td:nth-child(6)::before{ content: "Preuves / indicateurs"; }
-  tbody td:nth-child(7)::before{ content: "Risque / point à cadrer"; }
+      .intro{
+        margin-top: 24px;
+      }
 
-  th.compact, td.compact{ white-space: normal; }
-}
+      .meta{
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 38px;
+      }
+
+      section{
+        padding: 44px 0;
+      }
+
+      .section-head,
+      .contact{
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .method-grid{
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .table-note{ margin-bottom: 16px; }
+
+      .skills-table,
+      .skills-table tbody,
+      .skills-table tr,
+      .skills-table td{
+        display: block;
+        width: 100%;
+      }
+
+      .skills-table{
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .skills-table thead{ display: none; }
+
+      .skills-table tr{
+        padding: 22px 0;
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .skills-table tr:last-child{ border-bottom: none; }
+
+      .skills-table td{
+        border: none;
+        padding: 8px 0;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .skills-table td::before{
+        content: "";
+        display: block;
+        color: var(--beige-soft);
+        font-size: 10px;
+        line-height: 1.4;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+      }
+
+      .skills-table td:nth-child(1)::before{ content: "Domaine"; }
+      .skills-table td:nth-child(2)::before{ content: "Compétence"; }
+      .skills-table td:nth-child(3)::before{ content: "Type"; }
+      .skills-table td:nth-child(4)::before{ content: "Niveau"; }
+      .skills-table td:nth-child(5)::before{ content: "Permet"; }
+      .skills-table td:nth-child(6)::before{ content: "Preuves"; }
+      .skills-table td:nth-child(7)::before{ content: "Risque"; }
+
+      .skills-table .compact{ white-space: normal; }
+    }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+  <main class="page">
+    <div class="topline">
+      <div class="mark">Landry</div>
+      <nav class="nav" aria-label="Navigation">
+        <a href="#profil">Profil</a>
+        <a href="#synthese">Synthèse</a>
+        <a href="#preuves">Preuves</a>
+        <a href="#competences">Compétences</a>
+        <a href="#methode">Méthode</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
 
-    <!-- TEXTE EN NARROW -->
-    <header class="narrow">
-      <h1 class="name">Landry M.</h1>
-      <p class="role">CV public</p>
+    <header class="text-width">
+      <p class="eyebrow">CV public — compétences, méthode & preuves</p>
+      <h1>Profil autonome, analytique et orienté exécution.</h1>
+      <p class="intro">
+        J’interviens sur des sujets où il faut comprendre vite, structurer clairement et exécuter proprement :
+        produit, développement, sécurité crypto, organisation et résolution de problèmes. Mon approche repose sur
+        l’autonomie, la confidentialité, le sang-froid, l’analyse et l’amélioration continue.
+      </p>
+
+      <div class="meta" aria-label="Résumé rapide">
+        <div>
+          <span>Domaines</span>
+          <strong>Crypto · Produit · Développement</strong>
+        </div>
+        <div>
+          <span>Apport</span>
+          <strong>Structurer · Résoudre · Livrer</strong>
+        </div>
+        <div>
+          <span>Posture</span>
+          <strong>Confidentialité stricte</strong>
+        </div>
+        <div>
+          <span>Mode</span>
+          <strong>Autonomie · Pression · Méthode</strong>
+        </div>
+      </div>
     </header>
 
-    <div class="line"></div>
+    <section id="profil" class="text-width">
+      <div class="section-head">
+        <h2>Profil</h2>
+        <p>
+          Une présentation volontairement sobre : le site sert à exposer les capacités, la méthode,
+          les preuves disponibles et les domaines où je peux être utile concrètement.
+        </p>
+      </div>
 
-    <section class="narrow">
-      <h2>Profil</h2>
-      <p>
-        Autodidacte, discipliné. Débrouillard, il faut m'expliquer plusieurs fois pour que je comprenne n'importe quel principe.
-        je simplifie, puis j’améliore. Sang-froid, ténacité, improvisation efficace quand il faut.
-        Confidentialité stricte : loyauté, intégrité, zéro fuite.
-      </p>
-    </section>
+      <div class="portrait-slot">
+        <div class="profile-lines">
+          <p>
+            Je fonctionne par compréhension profonde : démonter un sujet, identifier sa logique,
+            le reformuler simplement, puis agir avec méthode.
+          </p>
+          <p class="muted">
+            Je peux être utile sur des missions de support opérationnel, structuration produit,
+            sécurité crypto, automatisation légère, organisation ou résolution de problèmes.
+          </p>
+        </div>
 
-    <div class="line"></div>
-
-    <!-- TABLEAU EN LARGE (pas narrow) -->
-    <section id="tableau">
-      <h2>Tableau des compétences Hard & Soft Skills</h2>
-
-      <div class="table-wrap" aria-label="Tableau des compétences">
-        <table>
-          <colgroup>
-            <col class="domain" />
-            <col class="skill" />
-            <col class="type" />
-            <col class="level" />
-            <col class="use" />
-            <col class="proof" />
-            <col class="risk" />
-          </colgroup>
-
-          <thead>
-            <tr>
-              <th>Domaine</th>
-              <th>Compétence</th>
-              <th class="compact">Type</th>
-              <th class="compact">Niveau</th>
-              <th>Ce que ça te permet</th>
-              <th>Preuves / indicateurs</th>
-              <th>Risques / point à cadrer</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td class="muted">Marchés</td>
-              <td>Crypto (écosystème, risques, sécurité)</td>
-              <td class="compact">Hard</td>
-              <td class="compact">3.5/5</td>
-              <td>Investir/spéculer avec hygiène de sécurité</td>
-              <td class="muted">process custody, anti-scam, gestion exposition</td>
-              <td class="muted">excès de conviction / surexpo</td>
-            </tr>
-            <tr>
-              <td class="muted">Marchés</td>
-              <td>Trading / exécution sous stress</td>
-              <td class="compact">Hard</td>
-              <td class="compact">3/5</td>
-              <td>Tenir un plan, gérer pertes/gains</td>
-              <td class="muted">journal, stats RR/winrate/expectancy</td>
-              <td class="muted">impulsivité si règles floues</td>
-            </tr>
-            <tr>
-              <td class="muted">Marchés</td>
-              <td>Lucidité risque / arbitrage</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Décider vite sans te mentir</td>
-              <td class="muted">décisions chiffrées, réduction risque</td>
-              <td class="muted">rigidité / sur-contrôle</td>
-            </tr>
-
-            <tr>
-              <td class="muted">Dév / Produit</td>
-              <td>Conception d’app (logique produit)</td>
-              <td class="compact">Hard</td>
-              <td class="compact">3/5</td>
-              <td>Passer idée → système</td>
-              <td class="muted">backlog, MVP, specs, roadmap</td>
-              <td class="muted">dispersion si trop d’idées</td>
-            </tr>
-            <tr>
-              <td class="muted">Dév / Data</td>
-              <td>Supabase (tables, RLS, triggers, vues)</td>
-              <td class="compact">Hard</td>
-              <td class="compact">3/5</td>
-              <td>Base solide, sécurisée</td>
-              <td class="muted">schéma DB, policies, triggers, migrations</td>
-              <td class="muted">refacto/perfectionnisme</td>
-            </tr>
-
-            <tr>
-              <td class="muted">Créatif</td>
-              <td>Direction artistique / branding premium</td>
-              <td class="compact">Hard</td>
-              <td class="compact">3/5</td>
-              <td>Identité cohérente “haut de gamme”</td>
-              <td class="muted">palette, règles, assets, maquettes</td>
-              <td class="muted">esthétique &gt; livraison</td>
-            </tr>
-            <tr>
-              <td class="muted">Créatif</td>
-              <td>Storytelling / concept</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Donner du sens + positionner</td>
-              <td class="muted">pitch, promesse, différenciation</td>
-              <td class="muted">trop de récit sans preuve</td>
-            </tr>
-
-            <tr>
-              <td class="muted">Leadership</td>
-              <td>Gestion d’équipe</td>
-              <td class="compact">Soft</td>
-              <td class="compact">3/5</td>
-              <td>Faire produire, cadrer, décider</td>
-              <td class="muted">routines, objectifs, suivi, feedback</td>
-              <td class="muted">autorité mal dosée</td>
-            </tr>
-            <tr>
-              <td class="muted">Leadership</td>
-              <td>Donner des directives claires</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Accélérer l’exécution des autres</td>
-              <td class="muted">briefs, checklists, standards</td>
-              <td class="muted">tensions si exigence brute</td>
-            </tr>
-            <tr>
-              <td class="muted">Leadership</td>
-              <td>Travailler sous pression</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Tenir quand ça chauffe</td>
-              <td class="muted">constance sous stress, décisions rapides</td>
-              <td class="muted">usure si pas de récup</td>
-            </tr>
-
-            <tr>
-              <td class="muted">Cognitif</td>
-              <td>Vision / stratégie</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Trajectoire long terme + choix</td>
-              <td class="muted">plans 6–24 mois, priorités nettes</td>
-              <td class="muted">vision sans exécution</td>
-            </tr>
-            <tr>
-              <td class="muted">Cognitif</td>
-              <td>Sens du détail / exigence</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Qualité, finition, cohérence</td>
-              <td class="muted">standards qualité, revues, critères</td>
-              <td class="muted">lenteur/perfectionnisme</td>
-            </tr>
-            <tr>
-              <td class="muted">Cognitif</td>
-              <td>Analyse / résolution de problèmes</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Diagnostiquer, corriger, optimiser</td>
-              <td class="muted">méthode: hypothèse→test→mesure</td>
-              <td class="muted">rumination si pas de clôture</td>
-            </tr>
-
-            <tr>
-              <td class="muted">Mental</td>
-              <td>Sang-froid</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Garder le contrôle en chaos</td>
-              <td class="muted">réactions stables, décisions calmes</td>
-              <td class="muted">froideur/fermeture</td>
-            </tr>
-            <tr>
-              <td class="muted">Mental</td>
-              <td>Endurance</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Tenir les projets longs</td>
-              <td class="muted">constance, discipline, régularité</td>
-              <td class="muted">burn si “toujours ON”</td>
-            </tr>
-            <tr>
-              <td class="muted">Mental</td>
-              <td><b>Ténacité / Grit (n’abandonne presque jamais)</b></td>
-              <td class="compact">Soft</td>
-              <td class="compact">5/5</td>
-              <td>Aller au bout malgré résistance</td>
-              <td class="muted">historique “je finis”, persistance</td>
-              <td class="muted">s’acharner sur mauvais pari</td>
-            </tr>
-
-            <tr>
-              <td class="muted">Apprentissage</td>
-              <td>Autodidacte / apprend sur le tas</td>
-              <td class="compact">Soft</td>
-              <td class="compact">5/5</td>
-              <td>Monter vite en compétence</td>
-              <td class="muted">exemples multi-domaines</td>
-              <td class="muted">stabiliser par structure</td>
-            </tr>
-            <tr>
-              <td class="muted">Apprentissage</td>
-              <td><b>Compréhension profonde (first principles)</b></td>
-              <td class="compact">Soft</td>
-              <td class="compact">4.5/5</td>
-              <td>Comprendre “comment c’est fait”</td>
-              <td class="muted">capacité à réexpliquer simplement</td>
-              <td class="muted">perdre du temps sur détails</td>
-            </tr>
-            <tr>
-              <td class="muted">Apprentissage</td>
-              <td><b>Pensée systémique (voir le système)</b></td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Comprendre interactions/effets</td>
-              <td class="muted">schémas, causalité, contraintes</td>
-              <td class="muted">complexifier inutilement</td>
-            </tr>
-
-            <tr>
-              <td class="muted">Exécution</td>
-              <td>Autonomie / ownership</td>
-              <td class="compact">Soft</td>
-              <td class="compact">5/5</td>
-              <td>Avancer sans babysitting</td>
-              <td class="muted">livrables, décisions, initiative</td>
-              <td class="muted">isolement / refus d’aide utile</td>
-            </tr>
-            <tr>
-              <td class="muted">Exécution</td>
-              <td><b>Improvisation / débrouillardise</b></td>
-              <td class="compact">Soft</td>
-              <td class="compact">4.5/5</td>
-              <td>Agir même sans plan parfait</td>
-              <td class="muted">solutions “terrain”, adaptation rapide</td>
-              <td class="muted">bricolage si pas de validation</td>
-            </tr>
-            <tr>
-              <td class="muted">Exécution</td>
-              <td><b>Itération + contournement</b> (si 1ère solution échoue)</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4.5/5</td>
-              <td>Trouver une voie alternative vite</td>
-              <td class="muted">“plan B/C”, tests successifs</td>
-              <td class="muted">raccourcis risqués</td>
-            </tr>
-            <tr>
-              <td class="muted">Cognitif</td>
-              <td><b>Pensée latérale / ingéniosité</b></td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Contourner blocages, créativité solution</td>
-              <td class="muted">solutions non évidentes, hacks propres</td>
-              <td class="muted">contourner au lieu de corriger racine</td>
-            </tr>
-            <tr>
-              <td class="muted">Cognitif</td>
-              <td><b>Simplification → amélioration</b> (amélioration continue)</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Rendre plus simple, plus efficace</td>
-              <td class="muted">process simplifiés, docs, templates</td>
-              <td class="muted">optimiser avant d’avoir livré</td>
-            </tr>
-
-            <tr>
-              <td class="muted">Valeurs</td>
-              <td>Loyauté</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Fiabilité relationnelle</td>
-              <td class="muted">engagements tenus, discrétion</td>
-              <td class="muted">rester trop longtemps “par loyauté”</td>
-            </tr>
-
-            <tr>
-              <td class="muted">Valeurs / Sécurité</td>
-              <td><b>Confidentialité / discrétion absolue (OPSEC)</b></td>
-              <td class="compact">Soft</td>
-              <td class="compact">5/5</td>
-              <td>Gérer infos sensibles sans fuite, inspirer confiance</td>
-              <td class="muted">historique “zéro fuite”, need-to-know, compartimentation</td>
-              <td class="muted">trop fermé → collaboration plus difficile</td>
-            </tr>
-
-            <tr>
-              <td class="muted">Social</td>
-              <td>Discret</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Contrôle image/infos</td>
-              <td class="muted">pas d’exposition inutile</td>
-              <td class="muted">limite réseau/opportunités</td>
-            </tr>
-            <tr>
-              <td class="muted">Social</td>
-              <td>Observateur</td>
-              <td class="compact">Soft</td>
-              <td class="compact">4/5</td>
-              <td>Lire une pièce / capter signaux</td>
-              <td class="muted">micro-patterns, cohérence</td>
-              <td class="muted">surinterprétation</td>
-            </tr>
-            <tr>
-              <td class="muted">Social</td>
-              <td>Analyse des gens</td>
-              <td class="compact">Soft</td>
-              <td class="compact">3.5/5</td>
-              <td>Anticiper comportements</td>
-              <td class="muted">lectures justes, décisions</td>
-              <td class="muted">biais d’hypothèse fixe</td>
-            </tr>
-
-            <tr>
-              <td class="muted">Body language</td>
-              <td>Analyse du corps / langage corporel</td>
-              <td class="compact">Hard</td>
-              <td class="compact">3/5</td>
-              <td>Détecter tension/dominance</td>
-              <td class="muted">grilles de lecture, cas</td>
-              <td class="muted">“effet loupe”</td>
-            </tr>
-
-            <tr>
-              <td class="muted">Spatial</td>
-              <td>Se repérer / comprendre l’espace</td>
-              <td class="compact">Hard</td>
-              <td class="compact">3.5/5</td>
-              <td>Chantier, orientation, mesures</td>
-              <td class="muted">lecture plans, repérage</td>
-              <td class="muted">erreurs si pas de contrôle</td>
-            </tr>
-
-            <tr>
-              <td class="muted">BTP</td>
-              <td>Implanter une maison (maçonnerie)</td>
-              <td class="compact">Hard</td>
-              <td class="compact">3/5</td>
-              <td>Piquetage, niveaux, alignements</td>
-              <td class="muted">métrés, niveaux, équerrage</td>
-              <td class="muted">normes/sécurité à cadrer</td>
-            </tr>
-            <tr>
-              <td class="muted">BTP</td>
-              <td>Petits travaux</td>
-              <td class="compact">Hard</td>
-              <td class="compact">3/5</td>
-              <td>Autonomie “terrain”</td>
-              <td class="muted">réparations, finitions, amélioration</td>
-              <td class="muted">perte de temps sans plan</td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- Option photo : pour l’activer, remplace ce div par une image :
+        <img src="photo.jpg" alt="Portrait de Landry" class="photo-placeholder" style="display:block; width:100%; object-fit:cover;" />
+        -->
+        <div class="photo-placeholder" aria-hidden="true"></div>
       </div>
     </section>
 
-    <div class="line"></div>
+    <section id="synthese" class="text-width">
+      <div class="section-head">
+        <h2>Synthèse</h2>
+        <p>
+          Les compétences les plus exploitables immédiatement : résolution de problèmes, autonomie,
+          apprentissage rapide, confidentialité, produit/développement, sécurité crypto et travail sous pression.
+        </p>
+      </div>
 
-    <!-- TEXTE EN NARROW -->
-    <section class="narrow">
-      <h2>Contact</h2>
-      <p class="small">
-        Email : <a href="mailto:ton.email@exemple.com">landryx7@gmail.com</a> — Nom/ Pseudo : <a href="#">@Landry Msd</a>
-      </p>
+      <div class="method-grid">
+        <div class="method-item">
+          <span>01 — Résoudre</span>
+          <p>Analyser une situation, isoler le problème, tester des solutions et corriger sans perdre le fil.</p>
+        </div>
+        <div class="method-item">
+          <span>02 — Structurer</span>
+          <p>Transformer une idée ou un besoin flou en système, étapes, priorités et livrables.</p>
+        </div>
+        <div class="method-item">
+          <span>03 — Sécuriser</span>
+          <p>Gérer les informations sensibles avec discrétion, compartimentation et logique need-to-know.</p>
+        </div>
+        <div class="method-item">
+          <span>04 — Exécuter</span>
+          <p>Rester opérationnel sous pression, s’adapter vite et maintenir un standard de qualité.</p>
+        </div>
+      </div>
     </section>
 
-  </div>
+    <section id="preuves" class="text-width">
+      <div class="section-head">
+        <h2>Preuves</h2>
+        <p>
+          Premiers éléments concrets à renforcer avec captures, liens, chiffres ou démonstrations au fur et à mesure.
+        </p>
+      </div>
+
+      <div class="method-grid">
+        <div class="method-item">
+          <span>Site CV</span>
+          <p>Site personnel conçu, structuré, codé et publié via GitHub Pages.</p>
+        </div>
+        <div class="method-item">
+          <span>Projet personnel</span>
+          <p>Travail de conception confidentiel : positionnement, structure, expérience utilisateur et direction artistique.</p>
+        </div>
+        <div class="method-item">
+          <span>Crypto</span>
+          <p>Process de sécurité : wallet, conservation, réduction des risques, hygiène anti-erreur et logique OPSEC.</p>
+        </div>
+        <div class="method-item">
+          <span>Produit</span>
+          <p>Capacité à passer d’une idée à une logique MVP : fonctionnalités, données, règles et priorisation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="competences">
+      <div class="section-head">
+        <h2>Compétences</h2>
+        <p>
+          Tableau de synthèse. Les niveaux sont estimatifs et servent à situer les forces,
+          les usages possibles, les preuves à produire et les points à cadrer.
+        </p>
+      </div>
+
+      <p class="table-note">Domaine → compétence → type → niveau → usage → preuve → vigilance.</p>
+
+      <table class="skills-table" aria-label="Tableau des compétences de Landry">
+        <colgroup>
+          <col class="domain" />
+          <col class="skill" />
+          <col class="type" />
+          <col class="level" />
+          <col class="use" />
+          <col class="proof" />
+          <col class="risk" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Domaine</th>
+            <th>Compétence</th>
+            <th class="compact">Type</th>
+            <th class="compact">Niveau</th>
+            <th>Ce que ça permet</th>
+            <th>Preuves / indicateurs</th>
+            <th>Point à cadrer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="muted">Marchés</td>
+            <td>Crypto (écosystème, risques, sécurité)</td>
+            <td class="compact">Hard</td>
+            <td class="compact">3.5/5</td>
+            <td>Investir/spéculer avec hygiène de sécurité</td>
+            <td class="muted">process custody, anti-scam, gestion exposition</td>
+            <td class="muted">excès de conviction / surexposition</td>
+          </tr>
+          <tr>
+            <td class="muted">Marchés</td>
+            <td>Trading / exécution sous stress</td>
+            <td class="compact">Hard</td>
+            <td class="compact">3/5</td>
+            <td>Tenir un plan, gérer pertes/gains</td>
+            <td class="muted">journal, stats RR/winrate/expectancy</td>
+            <td class="muted">impulsivité si règles floues</td>
+          </tr>
+          <tr>
+            <td class="muted">Marchés</td>
+            <td>Lucidité risque / arbitrage</td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Décider vite sans se mentir</td>
+            <td class="muted">décisions chiffrées, réduction risque</td>
+            <td class="muted">rigidité / sur-contrôle</td>
+          </tr>
+          <tr>
+            <td class="muted">Dév / Produit</td>
+            <td>Conception d’app (logique produit)</td>
+            <td class="compact">Hard</td>
+            <td class="compact">3/5</td>
+            <td>Passer d’une idée à un système</td>
+            <td class="muted">backlog, MVP, specs, roadmap</td>
+            <td class="muted">dispersion si trop d’idées</td>
+          </tr>
+          <tr>
+            <td class="muted">Dév / Data</td>
+            <td>Supabase (tables, RLS, triggers, vues)</td>
+            <td class="compact">Hard</td>
+            <td class="compact">3/5</td>
+            <td>Créer une base solide et sécurisée</td>
+            <td class="muted">schéma DB, policies, triggers, migrations</td>
+            <td class="muted">refacto / perfectionnisme</td>
+          </tr>
+          <tr>
+            <td class="muted">Créatif</td>
+            <td>Direction artistique / branding premium</td>
+            <td class="compact">Hard</td>
+            <td class="compact">3/5</td>
+            <td>Créer une identité cohérente</td>
+            <td class="muted">palette, règles, assets, maquettes</td>
+            <td class="muted">esthétique au détriment de la livraison</td>
+          </tr>
+          <tr>
+            <td class="muted">Créatif</td>
+            <td>Storytelling / concept</td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Donner du sens et positionner</td>
+            <td class="muted">pitch, promesse, différenciation</td>
+            <td class="muted">trop de récit sans preuve</td>
+          </tr>
+          <tr>
+            <td class="muted">Leadership</td>
+            <td>Gestion d’équipe</td>
+            <td class="compact">Soft</td>
+            <td class="compact">3/5</td>
+            <td>Faire produire, cadrer, décider</td>
+            <td class="muted">routines, objectifs, suivi, feedback</td>
+            <td class="muted">autorité mal dosée</td>
+          </tr>
+          <tr>
+            <td class="muted">Leadership</td>
+            <td>Donner des directives claires</td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Accélérer l’exécution des autres</td>
+            <td class="muted">briefs, checklists, standards</td>
+            <td class="muted">tensions si exigence brute</td>
+          </tr>
+          <tr>
+            <td class="muted">Leadership</td>
+            <td>Travailler sous pression</td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Tenir quand ça chauffe</td>
+            <td class="muted">constance sous stress, décisions rapides</td>
+            <td class="muted">usure si pas de récupération</td>
+          </tr>
+          <tr>
+            <td class="muted">Cognitif</td>
+            <td>Vision / stratégie</td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Construire une trajectoire long terme</td>
+            <td class="muted">plans 6–24 mois, priorités nettes</td>
+            <td class="muted">vision sans exécution</td>
+          </tr>
+          <tr>
+            <td class="muted">Cognitif</td>
+            <td>Sens du détail / exigence</td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Qualité, finition, cohérence</td>
+            <td class="muted">standards qualité, revues, critères</td>
+            <td class="muted">lenteur / perfectionnisme</td>
+          </tr>
+          <tr>
+            <td class="muted">Cognitif</td>
+            <td>Analyse / résolution de problèmes</td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Diagnostiquer, corriger, optimiser</td>
+            <td class="muted">hypothèse → test → mesure</td>
+            <td class="muted">rumination si pas de clôture</td>
+          </tr>
+          <tr>
+            <td class="muted">Mental</td>
+            <td>Sang-froid</td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Garder le contrôle dans le chaos</td>
+            <td class="muted">réactions stables, décisions calmes</td>
+            <td class="muted">froideur / fermeture</td>
+          </tr>
+          <tr>
+            <td class="muted">Mental</td>
+            <td>Endurance</td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Tenir les projets longs</td>
+            <td class="muted">constance, discipline, régularité</td>
+            <td class="muted">burn si toujours “ON”</td>
+          </tr>
+          <tr>
+            <td class="muted">Mental</td>
+            <td><b>Ténacité / Grit</b></td>
+            <td class="compact">Soft</td>
+            <td class="compact">5/5</td>
+            <td>Aller au bout malgré résistance</td>
+            <td class="muted">historique “je finis”, persistance</td>
+            <td class="muted">s’acharner sur mauvais pari</td>
+          </tr>
+          <tr>
+            <td class="muted">Apprentissage</td>
+            <td>Autodidacte / apprentissage sur le tas</td>
+            <td class="compact">Soft</td>
+            <td class="compact">5/5</td>
+            <td>Monter vite en compétence</td>
+            <td class="muted">exemples multi-domaines</td>
+            <td class="muted">stabiliser par structure</td>
+          </tr>
+          <tr>
+            <td class="muted">Apprentissage</td>
+            <td><b>Compréhension profonde (first principles)</b></td>
+            <td class="compact">Soft</td>
+            <td class="compact">4.5/5</td>
+            <td>Comprendre comment c’est fait</td>
+            <td class="muted">réexpliquer simplement</td>
+            <td class="muted">perdre du temps sur détails</td>
+          </tr>
+          <tr>
+            <td class="muted">Apprentissage</td>
+            <td><b>Pensée systémique</b></td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Comprendre interactions et effets</td>
+            <td class="muted">schémas, causalité, contraintes</td>
+            <td class="muted">complexifier inutilement</td>
+          </tr>
+          <tr>
+            <td class="muted">Exécution</td>
+            <td>Autonomie / ownership</td>
+            <td class="compact">Soft</td>
+            <td class="compact">5/5</td>
+            <td>Avancer sans babysitting</td>
+            <td class="muted">livrables, décisions, initiative</td>
+            <td class="muted">isolement / refus d’aide utile</td>
+          </tr>
+          <tr>
+            <td class="muted">Exécution</td>
+            <td><b>Improvisation / débrouillardise</b></td>
+            <td class="compact">Soft</td>
+            <td class="compact">4.5/5</td>
+            <td>Agir même sans plan parfait</td>
+            <td class="muted">solutions terrain, adaptation rapide</td>
+            <td class="muted">bricolage si pas de validation</td>
+          </tr>
+          <tr>
+            <td class="muted">Exécution</td>
+            <td><b>Itération + contournement</b></td>
+            <td class="compact">Soft</td>
+            <td class="compact">4.5/5</td>
+            <td>Trouver une voie alternative vite</td>
+            <td class="muted">plan B/C, tests successifs</td>
+            <td class="muted">raccourcis risqués</td>
+          </tr>
+          <tr>
+            <td class="muted">Cognitif</td>
+            <td><b>Pensée latérale / ingéniosité</b></td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Contourner les blocages</td>
+            <td class="muted">solutions non évidentes, hacks propres</td>
+            <td class="muted">contourner au lieu de corriger la racine</td>
+          </tr>
+          <tr>
+            <td class="muted">Cognitif</td>
+            <td><b>Simplification → amélioration</b></td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Rendre plus simple et efficace</td>
+            <td class="muted">process simplifiés, docs, templates</td>
+            <td class="muted">optimiser avant livraison</td>
+          </tr>
+          <tr>
+            <td class="muted">Valeurs</td>
+            <td>Loyauté</td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Fiabilité relationnelle</td>
+            <td class="muted">engagements tenus, discrétion</td>
+            <td class="muted">rester trop longtemps par loyauté</td>
+          </tr>
+          <tr>
+            <td class="muted">Sécurité</td>
+            <td><b>Confidentialité stricte / gestion d’informations sensibles</b></td>
+            <td class="compact">Soft</td>
+            <td class="compact">5/5</td>
+            <td>Gérer des informations sensibles avec fiabilité</td>
+            <td class="muted">need-to-know, compartimentation, discrétion</td>
+            <td class="muted">collaboration plus difficile si trop fermé</td>
+          </tr>
+          <tr>
+            <td class="muted">Social</td>
+            <td>Discret</td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Contrôle image et informations</td>
+            <td class="muted">pas d’exposition inutile</td>
+            <td class="muted">limite réseau / opportunités</td>
+          </tr>
+          <tr>
+            <td class="muted">Social</td>
+            <td>Observateur</td>
+            <td class="compact">Soft</td>
+            <td class="compact">4/5</td>
+            <td>Lire une pièce / capter signaux</td>
+            <td class="muted">micro-patterns, cohérence</td>
+            <td class="muted">surinterprétation</td>
+          </tr>
+          <tr>
+            <td class="muted">Social</td>
+            <td>Analyse des gens</td>
+            <td class="compact">Soft</td>
+            <td class="compact">3.5/5</td>
+            <td>Anticiper comportements</td>
+            <td class="muted">lectures justes, décisions</td>
+            <td class="muted">biais d’hypothèse fixe</td>
+          </tr>
+          <tr>
+            <td class="muted">Body language</td>
+            <td>Analyse du corps / langage corporel</td>
+            <td class="compact">Hard</td>
+            <td class="compact">3/5</td>
+            <td>Détecter tension ou dominance</td>
+            <td class="muted">grilles de lecture, cas</td>
+            <td class="muted">effet loupe</td>
+          </tr>
+          <tr>
+            <td class="muted">Spatial</td>
+            <td>Se repérer / comprendre l’espace</td>
+            <td class="compact">Hard</td>
+            <td class="compact">3.5/5</td>
+            <td>Chantier, orientation, mesures</td>
+            <td class="muted">lecture plans, repérage</td>
+            <td class="muted">erreurs si pas de contrôle</td>
+          </tr>
+          <tr>
+            <td class="muted">BTP</td>
+            <td>Implanter une maison (maçonnerie)</td>
+            <td class="compact">Hard</td>
+            <td class="compact">3/5</td>
+            <td>Piquetage, niveaux, alignements</td>
+            <td class="muted">métrés, niveaux, équerrage</td>
+            <td class="muted">normes / sécurité à cadrer</td>
+          </tr>
+          <tr>
+            <td class="muted">BTP</td>
+            <td>Petits travaux</td>
+            <td class="compact">Hard</td>
+            <td class="compact">3/5</td>
+            <td>Autonomie terrain</td>
+            <td class="muted">réparations, finitions, amélioration</td>
+            <td class="muted">perte de temps sans plan</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="methode" class="text-width">
+      <div class="section-head">
+        <h2>Méthode</h2>
+        <p>
+          Le style de travail repose sur la compréhension, la réduction du bruit, l’exécution,
+          puis l’amélioration mesurable.
+        </p>
+      </div>
+
+      <div class="method-grid">
+        <div class="method-item">
+          <span>01 — Comprendre</span>
+          <p>Identifier la logique profonde, les contraintes, les dépendances et la cause racine.</p>
+        </div>
+        <div class="method-item">
+          <span>02 — Simplifier</span>
+          <p>Reformuler, enlever le superflu, rendre le système lisible et utilisable.</p>
+        </div>
+        <div class="method-item">
+          <span>03 — Exécuter</span>
+          <p>Avancer même sous pression, avec autonomie, discipline et adaptation rapide.</p>
+        </div>
+        <div class="method-item">
+          <span>04 — Améliorer</span>
+          <p>Observer, corriger, documenter et renforcer la version suivante.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="text-width">
+      <div class="contact">
+        <h2>Contact</h2>
+        <p>
+          Email : <a href="mailto:landryx7@gmail.com">landryx7@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+    <footer class="text-width">
+      <div>© <span id="year"></span> Landry</div>
+      <div>CV public</div>
+    </footer>
+  </main>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
-
